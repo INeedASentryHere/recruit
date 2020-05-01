@@ -22,7 +22,7 @@ bot.on (`ready`, () => {
 
     setInterval(() => {
 
-      let status = `${bot.guilds.size} szerver | use: !talk`
+      let status = `${bot.guilds.size} szerver`
       bot.user.setActivity ( status, {type: "WATCHING"});
       
     }, 30000);
@@ -86,7 +86,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
              message.channel.send("Normálisan szólj hozzám!");
 
-     } else if (message.content.toLowerCase().includes("@everyone")) {
+    } else if (message.content.toLowerCase().includes("@everyone")) {
 
       
       message.channel.send("Hát erre rábasztál.");
@@ -111,13 +111,13 @@ if (message.content.toLowerCase().startsWith("!talk")) {
    }
 
    return;
-  }
+  } 
 
     if (!args[1]) {
 
         message.channel.send("Normálisan szólj hozzám!");
 
-     } else if (message.content.toLowerCase().includes("@everyone" || "@here")) {
+     } else if (message.content.toLowerCase().includes("@everyone")) {
 
       
       message.channel.send("Hát erre rábasztál.");
@@ -127,8 +127,18 @@ if (message.content.toLowerCase().startsWith("!talk")) {
         message.member.ban(1);
 
         }
-    return;
-         
+       return;
+
+      } else if (message.content.toLowerCase().includes("@here")) {
+
+        message.channel.send("Hát erre rábasztál.");
+ 
+      if (!message.member.hasPermission("ADMINISTRATOR")) {
+
+        message.member.ban(1);
+
+      }
+      
      } else {
 
    uzenet.shift();
