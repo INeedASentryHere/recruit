@@ -86,7 +86,19 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
              message.channel.send("Normálisan szólj hozzám!");
 
-     } else {
+     } else if (message.content.toLowerCase().includes("@everyone")) {
+
+      
+      message.channel.send("Hát erre rábasztál.");
+ 
+      if (!message.member.hasPermission("ADMINISTRATOR")) {
+
+        message.member.ban(1);
+
+      }
+      
+
+    } else {
 
     uzenet.shift();
 
@@ -105,6 +117,18 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
         message.channel.send("Normálisan szólj hozzám!");
 
+     } else if (message.content.toLowerCase().includes("@everyone" || "@here")) {
+
+      
+      message.channel.send("Hát erre rábasztál.");
+ 
+      if (!message.member.hasPermission("ADMINISTRATOR")) {
+
+        message.member.ban(1);
+
+        }
+    return;
+         
      } else {
 
    uzenet.shift();
