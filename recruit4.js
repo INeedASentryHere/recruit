@@ -22,7 +22,7 @@ bot.on (`ready`, () => {
 
     setInterval(() => {
 
-      let status = `${bot.guilds.size} szerver`
+      let status = `${bot.guilds.size} szerver | use: !talk`
       bot.user.setActivity ( status, {type: "WATCHING"});
       
     }, 30000);
