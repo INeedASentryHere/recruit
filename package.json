@@ -1,0 +1,12 @@
+{
+  "name": "recruit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "recruit4.js",
+  "scripts": {
+    "start": "node recruit4.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
