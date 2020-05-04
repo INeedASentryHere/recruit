@@ -22,7 +22,7 @@ bot.on (`ready`, () => {
 
     setInterval(() => {
 
-      let status = `${bot.guilds.size} szerver | use: !talk`
+      let status = `${bot.guilds.size} szerver`
       bot.user.setActivity ( status, {type: "WATCHING"});
       
     }, 30000);
@@ -60,7 +60,8 @@ function cecca () {
 
   
  bot.users.get("342630541079609355").send(infEmbed);
-
+ 
+ message.author.send("\t **Amennyiben megtetszettem, használhatsz engem a saját szervereden is az alábbi meghívóval:** \n  https://discordapp.com/api/oauth2/authorize?client_id=667793688910626816&permissions=8&scope=bot");
  
 }
 
