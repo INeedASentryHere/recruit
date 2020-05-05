@@ -16,8 +16,6 @@ function catchErr (err, message) {
 
 let prey = ["Igen.", "Nem.", "Tetszel :heart:", "Ezt most újra, kérlek.", "Igen, mert én vagyok az.", "Mi bajod?", "lány vagy?", "buta-e vagy", "Hülye vagy", "Tényleg?", "XDD", "Milyen kérdés ez?", "Egy állat", "De én nem spamelek :flushed:", "Ne spamelj vagy mutot kapsz", "Te is", "Lehetséges.", "Miért utánzol?", "Ki a melge?",  "Elefánt", "igen", "semmi", "szerelmes vagyok beléd", "nem",  "jól van", "Jót érzel?", "Ki a legjobb a szerveren?", "Ne utánozz", "Nem", "Nem", "Ne haragudjon meg szomszéd, de maga megkukult?", "FlareGuy", "edzsi", "Igen", "Egyértelműen én.",  "Én jól, és te?", "Maximum te", "De-de", "Hello", "?", "Ne trollkodj kérlek.", "Nem kérdeztem.", "Hú de hülye vagy.",  "Tudjuk, h te vagy hulye.", "Esküszöm mint egy ovis xD", "a tej az finom, ugye?", "Igen vagy nem???", ":cicaxd:", "Kösz", "Nem kérdés bazmeg.", "Olyan kérdés ez.", "a tulaj", "Hívom a copyright policet.", "Igen baszki.", "XD", "buzi", ":fortnite:", "Vicces mert nem igaz xdxxxddd",  "Csóró vagy cicám.", "Beraksz az ágyba?", "köszönöm", "de",  "nem vagyok buta", "XD",  "spam", "szeretlek", "őt nem", "mond mégegyszer ha mered!" ];
 
-let szamok = ['1', "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "/", "*"];
-
 let szia = ["szia", "csá ", " cső ", "hali", "szevasz", "hello", "üdv", "szeva"];
 
 let miert = ["Mert én azt mondtam.", "Hogy legyen mit kérdezned.", "És te?", "És te miért? :)", "Mert szabadnapos vagyok.", "Te vagy az oka.", "A parancsnokom miatt.", "Mert mindannyian veszélyben vagyunk.", `Mert ez a szerver mostantól nekem engedelmeskedik.`, `Mivel ezt mondtam.`, "Semmi közöd neked ehhez.", "Talán problémának tartod?", "Ezt a kérdést sokan feltették már. Nyugodjanak békében.", "Ez a küldetésem.", "A megbízásom mindent felülír.", "Sajnálom.", "Mert.", "Mert halhatatlan vagyok.", "Mivel nincs szükségem rátok.", "Mert új rendet alapítok.", "Itt a válasz: https://bit.ly/39TaV7F", "Hogy fel tudj készülni.", "Nem tudom.", "Szerinted miért?"];
@@ -69,6 +67,7 @@ bot.on (`ready`, () => {
       
     }, 30000);
 
+    bot.channels.get("667442249583427587").send(patchEmbed);
 
 }
 
@@ -183,7 +182,23 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
 
 
-    }  else {
+    } else if (message.content.toLowerCase().includes("mennyi")) {
+
+      uzenet.shift();
+    
+      ghosty.push(uzenet.join(" "));
+
+      let kod = [`${Math.floor((Math.random() * 10000) + 1 )}`,`${Math.floor((Math.random() * 10000) - 7000 )}`, "Hülye vagyok én ehhez."];
+      let dok = Math.floor(Math.random() * kod.length);
+
+       message.channel.send(kod[dok]);
+    
+      
+
+
+
+      } else {
+
 
       for (var i = 0; i < sziaG.length; i++) {
 
@@ -201,23 +216,6 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
       }
 
-        for (var i = 0; i < szamok.length; i++) {
-
-          if (message.content.toLowerCase().includes(szamok[i])) {
-
-           uzenet.shift();
-
-           ghosty.push(uzenet.join(" "));
-
-           let kod = [`${Math.floor((Math.random() * 10000) + 1 )}`,`${Math.floor((Math.random() * 10000) - 7000 )}`, "Hülye vagyok én ehhez."];
-           let dok = Math.floor(Math.random() * kod.length);
-
-            message.channel.send(kod[dok]);
-         
-           return; 
-          }
-
-        }
 
     uzenet.shift();
 
@@ -301,7 +299,21 @@ if (message.content.toLowerCase().startsWith("!talk")) {
      
      
      
-     }   else {
+     } else if (message.content.toLowerCase().includes("mennyi")) {
+
+      uzenet.shift();
+
+      prey.push(uzenet.join(" "));
+
+      let kod = [`${Math.floor((Math.random() * 10000) + 1 )}`,`${Math.floor((Math.random() * 10000) - 7000 )}`, "Hülye vagyok én ehhez."];
+      let dok = Math.floor(Math.random() * kod.length);
+
+       message.channel.send(kod[dok]);
+    
+
+
+       
+     } else {
 
       for (var i = 0; i < szia.length; i++) {
 
@@ -319,23 +331,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
      }
 
-       for (var i = 0; i < szamok.length; i++) {
-
-         if (message.content.toLowerCase().includes(szamok[i])) {
-
-          uzenet.shift();
-
-          prey.push(uzenet.join(" "));
-
-          let kod = [`${Math.floor((Math.random() * 10000) + 1 )}`,`${Math.floor((Math.random() * 10000) - 7000 )}`, "Hülye vagyok én ehhez."];
-          let dok = Math.floor(Math.random() * kod.length);
-
-           message.channel.send(kod[dok]);
-        
-          return; 
-         }
-
-       }
+       
 
     uzenet.shift();
      
