@@ -69,7 +69,6 @@ bot.on (`ready`, () => {
       
     }, 30000);
 
-    bot.channels.get("667442249583427587").send(patchEmbed);
 
 }
 
