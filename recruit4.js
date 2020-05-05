@@ -18,7 +18,7 @@ let prey = ["Igen.", "Nem.", "Tetszel :heart:", "Ezt most újra, kérlek.", "Ige
 
 let szamok = ['1', "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "/", "*"];
 
-let szia = ["szia", " cs ", " cső ", "hali", "szevasz", "hello", "üdv", "szeva"];
+let szia = ["szia", "csá ", " cső ", "hali", "szevasz", "hello", "üdv", "szeva"];
 
 let miert = ["Mert én azt mondtam.", "Hogy legyen mit kérdezned.", "És te?", "És te miért? :)", "Mert szabadnapos vagyok.", "Te vagy az oka.", "A parancsnokom miatt.", "Mert mindannyian veszélyben vagyunk.", `Mert ez a szerver mostantól nekem engedelmeskedik.`, `Mivel ezt mondtam.`, "Semmi közöd neked ehhez.", "Talán problémának tartod?", "Ezt a kérdést sokan feltették már. Nyugodjanak békében.", "Ez a küldetésem.", "A megbízásom mindent felülír.", "Sajnálom.", "Mert.", "Mert halhatatlan vagyok.", "Mivel nincs szükségem rátok.", "Mert új rendet alapítok.", "Itt a válasz: https://bit.ly/39TaV7F", "Hogy fel tudj készülni.", "Nem tudom.", "Szerinted miért?"];
 
@@ -46,7 +46,7 @@ var patchEmbed = new Discord.RichEmbed ()
 
 let ghosty = ["Igen.", "Nem.", "Valószínűleg."];
 
-let sziaG = ["szia", " cs ", " cső ", "hali", "szevasz", "hello", "üdv", "szeva"];
+let sziaG = ["szia", "csá ", " cső ", "hali", "szevasz", "hello", "üdv", "szeva"];
 
 let miertGhost = ["Mert én azt mondtam.", "Hogy legyen mit kérdezned.", "És te?", "És te miért? :)", "Mert szabadnapos vagyok.", "Te vagy az oka.", "A parancsnokom miatt.", "Mert mindannyian veszélyben vagyunk.", `Mert ez a szerver mostantól nekem engedelmeskedik.`, `Mivel ezt mondtam.`, "Semmi közöd neked ehhez.", "Talán problémának tartod?", "Ezt a kérdést sokan feltették már. Nyugodjanak békében.", "Ez a küldetésem.", "A megbízásom mindent felülír.", "Sajnálom.", "Mert.", "Mert halhatatlan vagyok.", "Mivel nincs szükségem rátok.", "Mert új rendet alapítok.", "Itt a válasz: https://bit.ly/39TaV7F", "Hogy fel tudj készülni.", "Nem tudom.", "Szerinted miért?"];
 
