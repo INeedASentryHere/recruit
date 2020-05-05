@@ -27,7 +27,7 @@ let miert = ["Mert én azt mondtam.", "Hogy legyen mit kérdezned.", "És te?", 
 var patchEmbed = new Discord.RichEmbed ()
 
   .setTitle ("**Release 1.0.2**")
-  .setAuthor(bot.user.username, "https://cdn.discordapp.com/attachments/649996440256643082/707239639580409926/fraction-f_teaser.jpg")
+  .setAuthor("FlareBot Recruit", "https://cdn.discordapp.com/attachments/649996440256643082/707239639580409926/fraction-f_teaser.jpg")
   .setColor("#910aff")
   .addBlankField()
   .addField("📌`Mi változott?`", `** - Mostantól a bot pontosabban fog válaszolni a neki feltett kérdésekre illetve az ő hozzá tett kijelentésekre: \n \t - Hogyha mostantól köszönsz neki, akkor ő se lesz bunkó, visszaköszön. :) \n \t - Most már a számolós kérdésekre is sokkal szebben válaszol, ezzel is örömet okozva a matek dolgozatot íróknak 🤡 (nyugodj meg, továbbra is ugyanolyan buta matekból, csak most már tippel is számokkal). \n \t - És még változott több apró dolog is, majd megtapasztaljátok. \n - Removed Herobrine.**`)
