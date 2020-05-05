@@ -388,11 +388,17 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
    let patch = ["422015543147757588", "681577448143585288"];
 
-    for (var d = 0; d < patch.length; i++) {
-
-      bot.channels.get(patch[d]).send(patchEmbed);
     
-    }
+
+      bot.channels.get("422015543147757588").send(patchEmbed);
+
+      setTimeout(() => {
+
+        bot.channels.get("681577448143585288").send(patchEmbed);
+        
+      }, 1500);
+    
+    
 
   }
 
