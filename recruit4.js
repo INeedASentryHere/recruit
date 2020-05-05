@@ -34,7 +34,7 @@ var patchEmbed = new Discord.RichEmbed ()
   .addBlankField()
   .addField("💬 `Végszó`", "*A bot mostantól heti frissítéseket fog kapni; hol nagyobb, hol kisebb dolgokat adva hozzá. Sok meglepetés vár még titeket a jövőben.* \n **Amennyiben hibát találsz, írj a bot fejlesztőjére:** `FlareGuy [Bence]#4623`")
   .addBlankField()
-  .setFooter (bot.user.username, "https://cdn.discordapp.com/attachments/649996440256643082/707239639580409926/fraction-f_teaser.jpg")
+  .setFooter ("FlareBot Recruit", "https://cdn.discordapp.com/attachments/649996440256643082/707239639580409926/fraction-f_teaser.jpg")
   .setTimestamp();
 
 
