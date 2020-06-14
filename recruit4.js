@@ -143,7 +143,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
         }
 
-      } else if (message.content.toLowerCase().includes("https://www.pornhub.com")) {
+      } else if (message.content.toLowerCase().includes("www.pornhub.com")) {
       
       if (!message.member.hasPermission("ADMINISTRATOR")) {
 
@@ -278,7 +278,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
       }
       
-     } else if (message.content.toLowerCase().includes("https://www.pornhub.com")) {
+     } else if (message.content.toLowerCase().includes("www.pornhub.com")) {
       
       if (!message.member.hasPermission("ADMINISTRATOR")) {
 
