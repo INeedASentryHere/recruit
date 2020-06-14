@@ -1,7 +1,6 @@
 const Discord = require(`discord.js`);
 const bot = new Discord.Client();
 
-//Bot login
 
 bot.login(process.env.token);
 
@@ -26,14 +25,14 @@ let miert = ["Mert én azt mondtam.", "Hogy legyen mit kérdezned.", "És te?", 
 var patchEmbed = new Discord.RichEmbed ()
 
   .addBlankField()
-  .setTitle ("**Release 1.0.2**")
+  .setTitle ("**Release 1.0.3**")
   .setAuthor("FlareBot Recruit", "https://cdn.discordapp.com/attachments/649996440256643082/707239639580409926/fraction-f_teaser.jpg")
-  .setColor("#910aff")
+  .setColor("#00d9ff")
   .setThumbnail("https://cdn.discordapp.com/attachments/649996440256643082/707239639580409926/fraction-f_teaser.jpg")
   .addBlankField()
-  .addField("📌`Mi változott?`", ` - Mostantól a bot pontosabban fog válaszolni a neki feltett kérdésekre illetve az ő hozzá tett kijelentésekre: \n \t - Hogyha mostantól köszönsz neki, akkor ő se lesz bunkó, visszaköszön. :) \n \t - Most már a számolós kérdésekre is sokkal szebben válaszol, ezzel is örömet okozva a matek dolgozatot íróknak 🤡 (nyugodj meg, továbbra is ugyanolyan buta matekból, csak most már tippel is számokkal). \n \t - És még változott több apró dolog is, majd megtapasztaljátok. \n - Removed Herobrine.`)
+  .addField("📌`Mi változott?`", ` - ~~Semmi.~~ \n - Mostantól a bot kiszűri, ha pornográf linket, vagy bármi egyéb linket küldenek neki: \n A pornográf tartalomért szigorúan büntet; a neki való sima linkek küldözgetéséért pedig hirdetés okán figyelmeztet, és ha kell, akkor bírságot is szabhat ki rád, aminek ki nem fizetéséért bant kapsz. \n - A bothoz hozzáadtunk még több bugot, hogy későbbi patchekben fixelhessük őket.`)
   .addBlankField()
-  .addField("💬 `Végszó`", "*A bot mostantól heti frissítéseket fog kapni; hol nagyobb, hol kisebb dolgokat adva hozzá. Sok meglepetés vár még titeket a jövőben.* \n **Amennyiben hibát találsz, írj a bot fejlesztőjére:** `FlareGuy [Bence]#4623`")
+  .addField("💬 `Végszó`", "*Mi a tanulság? Ne spammeljétek a botot linkekkel, hogy azt saját magatok - vagy más - hirdetésére használjátok fel, és akkor minden a legnagyobb rendben lesz. 🥰* \n **Amennyiben hibát találsz, írj a bot fejlesztőjére:** `FlareGuy [Bence]#4623`")
   .addBlankField()
   .setFooter ("FlareBot Recruit", "https://cdn.discordapp.com/attachments/649996440256643082/707239639580409926/fraction-f_teaser.jpg")
   .setTimestamp();
@@ -138,12 +137,29 @@ if (message.content.toLowerCase().startsWith("!talk")) {
       
       message.channel.send("Hát erre rábasztál.");
  
+        if (!message.member.hasPermission("ADMINISTRATOR")) {
+
+         message.member.ban(1);
+
+        }
+
+      } else if (message.content.toLowerCase().includes("https://www.pornhub.com")) {
+      
       if (!message.member.hasPermission("ADMINISTRATOR")) {
 
         message.member.ban(1);
 
       }
-      
+
+    } else if (message.content.toLowerCase().includes("https://")) {
+
+
+    let nolink = ["Menj innen a mocskos linkeddel!", `Áh, ${message.member}! Látom szereted kockáztatni a dolgaidat!`, "Próbálkozni szabad, de linkekkel nem mész semmire. :)", "Linkekért cserébe utalnod kell nekem havonta.", "Nem, nem és NEM!"];
+
+    let arng = Math.floor(Math.random() * nolink.length);
+
+    message.channel.send(nolink[arng]);
+
 
     } else if (message.content.toLowerCase().includes("miért")) {
 
@@ -262,7 +278,29 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
       }
       
-     }  else if (message.content.toLowerCase().includes("miért")) {
+     } else if (message.content.toLowerCase().includes("https://www.pornhub.com")) {
+      
+      if (!message.member.hasPermission("ADMINISTRATOR")) {
+
+        message.member.ban(1);
+
+         } else {
+
+            message.channel.send(`${message.member}, sajnos ****Adminisztrátori*** jogod van, ezért nem tudlak bannolni pornográf tartalom megosztásáért. :( `);
+
+          }
+
+    } else if (message.content.toLowerCase().includes("https://")) {
+
+
+    let nolink = ["Menj innen a mocskos linkeddel!", `Áh, ${message.member}! Látom szereted kockáztatni a dolgaidat!`, "Próbálkozni szabad, de linkekkel nem mész semmire. :)", "Linkekért cserébe utalnod kell nekem havonta.", "Nem, nem és NEM!"];
+
+    let arng = Math.floor(Math.random() * nolink.length);
+
+    message.channel.send(nolink[arng]);
+     
+     
+   } else if (message.content.toLowerCase().includes("miért")) {
 
       uzenet.shift();
 
