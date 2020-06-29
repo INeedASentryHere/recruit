@@ -14,7 +14,7 @@ function catchErr (err, message) {
 //
 
 
-let prey = ["Igen.", "Nem.", "Tetszel :heart:", "Ezt most újra, kérlek.", "Igen, mert én vagyok az.", "Mi bajod?", "lány vagy?", "buta-e vagy", "Hülye vagy", "Tényleg?", "XDD", "Milyen kérdés ez?", "Egy állat", "De én nem spamelek :flushed:", "Ne spamelj vagy mutot kapsz", "Te is", "Lehetséges.", "Miért utánzol?", "Ki a melge?",  "Elefánt", "igen", "semmi", "szerelmes vagyok beléd", "nem",  "jól van", "Jót érzel?", "Ki a legjobb a szerveren?", "Ne utánozz", "Nem", "Nem", "Ne haragudjon meg szomszéd, de maga megkukult?", "FlareGuy", "edzsi", "Igen", "Egyértelműen én.",  "Én jól, és te?", "Maximum te", "De-de", "Hello", "?", "Ne trollkodj kérlek.", "Nem kérdeztem.", "Hú de hülye vagy.",  "Tudjuk, h te vagy hulye.", "Esküszöm mint egy ovis xD", "a tej az finom, ugye?", "Igen vagy nem???", ":cicaxd:", "Kösz", "Nem kérdés bazmeg.", "Olyan kérdés ez.", "a tulaj", "Hívom a copyright policet.", "Igen baszki.", "XD", "buzi", ":fortnite:", "Vicces mert nem igaz xdxxxddd",  "Csóró vagy cicám.", "Beraksz az ágyba?", "köszönöm", "de",  "nem vagyok buta", "XD",  "spam", "szeretlek", "őt nem", "mond mégegyszer ha mered!" ];
+let prey = ["Igen.", "Nem.", "Tetszel :heart:", "Ezt most újra, kérlek.", "Igen, mert én vagyok az.", "Mi bajod?", "lány vagy?", "buta-e vagy", "Hülye vagy", "Tényleg?", "XDD", "Milyen kérdés ez?", "Egy állat", "De én nem spamelek :flushed:", "Ne spamelj vagy mutot kapsz", "Te is", "Lehetséges.", "Miért utánzol?", "Ki a melge?",  "Elefánt", "igen", "semmi", "szerelmes vagyok beléd", "nem",  "jól van", "Jót érzel?", "Ki a legjobb a szerveren?", "Ne utánozz", "Nem", "Nem", "Ne haragudjon meg szomszéd, de maga megkukult?", "FlareGuy", "edzsi", "Igen", "Egyértelműen én.",  "Én jól, és te?", "Maximum te", "De-de", "Hello", "?", "Ne trollkodj kérlek.", "Nem kérdeztem.", "Hú de hülye vagy.",  "Tudjuk, h te vagy hulye.", "Esküszöm mint egy ovis xD", "a tej az finom, ugye?", "Igen vagy nem???", ":cicaxd:", "Kösz", "Nem kérdés bazmeg.", "Olyan kérdés ez.", "a tulaj", "Hívom a copyright policet.", "Igen baszki.", "XD", "buzi",  "Vicces mert nem igaz", "xdxxxddd",  "Csóró vagy cicám.", "Beraksz az ágyba?", "köszönöm", "de",  "nem vagyok buta",   "spam", "szeretlek", "őt nem", "mond mégegyszer ha mered!" ];
 
 let szia = ["szia", "csá ", " cső ", "hali", "szevasz", "hello", "üdv", "szeva"];
 
@@ -125,7 +125,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
   // Ghost szeró
   //
- if (message.guild.id === "322071698465882112") {
+ /*if (message.guild.id === "322071698465882112") {
 
 
           if (!args[1]) {
@@ -245,7 +245,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
    }
 
    return;
-  }
+  }*/
 
 
   
@@ -286,7 +286,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
          } else {
 
-            message.channel.send(`${message.member}, sajnos ****Adminisztrátori*** jogod van, ezért nem tudlak bannolni pornográf tartalom megosztásáért. :( `);
+            message.channel.send(`${message.member}, sajnos ***Adminisztrátori*** jogod van, ezért nem tudlak bannolni pornográf tartalom megosztásáért. :( `);
 
           }
 
