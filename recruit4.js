@@ -223,20 +223,26 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
 
        
-     } else if (message.content.toLowerCase() == /szia|csá | cső |hali|szevasz|hello|üdv| cs | hi /) {
-
-
-         uzenet.shift();
-         szia.push(uzenet.join(" "));
-
-         let koszon = Math.floor(Math.random() * szia.length);
-
-         message.channel.send(szia[koszon]);
-
-         return;
-           
-
      } else {
+
+
+      for (var i = 0; i < szia.length; i++ ) {
+
+        if (message.content.toLowerCase().includes(szia[i])) {
+
+
+          uzenet.shift();
+          szia.push(uzenet.join(" "));
+ 
+          let koszon = Math.floor(Math.random() * szia.length);
+ 
+          message.channel.send(szia[koszon]);
+ 
+          return;
+
+         }
+       }
+     
 
        
 
@@ -249,7 +255,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
   message.channel.send(prey[funnyNumber]);
 
 
-      }
+   }
      
      
   } else if (message.content.toLowerCase().startsWith("!getdata")) {
@@ -293,11 +299,11 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
     
 
-      bot.channels.get("422015543147757588").send(patchEmbed);
+      bot.channels.cache.get("422015543147757588").send(patchEmbed);
 
       setTimeout(() => {
 
-        bot.channels.get("681577448143585288").send(patchEmbed);
+        bot.channels.cache.get("681577448143585288").send(patchEmbed);
         
       }, 1500);
     
