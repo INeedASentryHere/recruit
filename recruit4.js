@@ -6,7 +6,7 @@ bot.login(process.env.token);
 
 function catchErr (err, message) {
 
-    bot.users.get("342630541079609355").send("Hiba: ```" + err + "```");
+    bot.users.cache.get("342630541079609355").send("Hiba: ```" + err + "```");
 
 }
 
