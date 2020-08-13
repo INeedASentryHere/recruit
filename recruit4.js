@@ -223,7 +223,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
 
        
-     } else if (message.content.toLowerCase().includes(/szia|csá | cső |hali|szevasz|hello|üdv| cs | hi /)) {
+     } else if (message.content.toLowerCase() == /szia|csá | cső |hali|szevasz|hello|üdv| cs | hi /) {
 
 
          uzenet.shift();
