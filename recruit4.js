@@ -225,10 +225,10 @@ if (message.content.toLowerCase().startsWith("!talk")) {
        
      } else {
 
+      let hello = /szia|csá | cső |hali|szevasz|hello|üdv|szeva| hi /i;
+     
 
-      for (var i = 0; i < szia.length; i++ ) {
-
-        if (message.content.toLowerCase().includes(szia[i])) {
+        if (hello.test(message.content)) {
 
 
           uzenet.shift();
@@ -241,7 +241,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
           return;
 
          }
-       }
+       
      
 
        
