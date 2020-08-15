@@ -225,7 +225,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
        
      } else {
 
-      let hello = /szia|csá | cső |hali|szevasz|hello|üdv|szeva| hi /i;
+      let hello = /szia| csá| cső |hali|szevasz|hello|üdv|szeva| hi /i;
      
 
         if (hello.test(message.content)) {
