@@ -317,4 +317,18 @@ if (message.content.toLowerCase().startsWith("!talk")) {
         catchErr (err, message);
     }
 
-} )
+} );
+
+bot.on("guildMemberAdd", gui => {
+
+  try {
+
+    gui.send(`***Üdv a ${gui.guild.name} szerveren! \n Esetleg ha kíváncsi lennél a beszélgetős botunkra, itt egy meghívó, amivel felviheted őt a szerveredre társalogni:*** \n https://discord.com/oauth2/authorize?client_id=667793688910626816&permissions=8&scope=bot 😎`);
+
+  }
+
+  catch(err) {
+    catchErr(err, message);
+  }
+
+});
