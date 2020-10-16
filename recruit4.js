@@ -72,6 +72,9 @@ catch (err) {
 
 });
 
+
+
+
 bot.on ("message", message => {
 
     try {
@@ -111,6 +114,36 @@ const args = message.content.substring().split(" ");
 var uzenet = message.content.substring().split(" ");
 let fog = args[args.length - 1];
 
+
+let mainTrigger = /@|https:\/\//i;
+let miertTrigger = /miért/i;
+let mertTrigger = /mert/i;
+let koszonTrigger = /szia| csá| cső |hali|szevasz|hello|üdv|szeva| hi /i;
+
+if (!mainTrigger.test(message.content)) {
+  
+  if (args[1]) {
+    
+    uzenet.shift();
+
+    if (koszonTrigger.test(message.content)) {
+
+      szia.push(uzenet.join(" "));
+
+      } else if (mertTrigger.test(message.content)) {
+
+        miert.push(uzenet.join(" "));
+
+        } else {
+
+          prey.push(uzenet.join(" "));
+
+        }
+
+
+      }
+
+}
 
 
 
@@ -173,9 +206,6 @@ if (message.content.toLowerCase().startsWith("!talk")) {
      
    } else if (message.content.toLowerCase().includes("miért")) {
 
-      uzenet.shift();
-
-      prey.push(uzenet.join(" "));
 
     let merne = Math.floor(Math.random() * miert.length);
 
@@ -184,10 +214,6 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
     } else if (message.content.toLowerCase().includes("mert")) {
 
-       uzenet.shift();
-   
-       miert.push(uzenet.join(" "));
-
        let rider = Math.floor(Math.random() * prey.length);
 
        message.channel.send(prey[rider]);
@@ -195,9 +221,6 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
            } else if (message.content.toLowerCase().includes(" te ")) {
 
-               uzenet.shift();
-
-                      prey.push(uzenet.join(" "));
 
                       let eperKetto = Math.floor(Math.random() * eperegyGhost.length);
                       let csodaDoboz = [`${eperegyGhost[eperKetto]}`, `${args[1]} ${fog}`, `${fog} ${args[1]}`, `${fog}`];
@@ -211,9 +234,6 @@ if (message.content.toLowerCase().startsWith("!talk")) {
      
      } else if (message.content.toLowerCase().includes("mennyi")) {
 
-      uzenet.shift();
-
-      prey.push(uzenet.join(" "));
 
       let kod = [`${Math.floor((Math.random() * 10000) + 1 )}`,`${Math.floor((Math.random() * 10000) - 7000 )}`, "Hülye vagyok én ehhez."];
       let dok = Math.floor(Math.random() * kod.length);
@@ -225,14 +245,11 @@ if (message.content.toLowerCase().startsWith("!talk")) {
        
      } else {
 
-      let hello = /szia| csá| cső |hali|szevasz|hello|üdv|szeva| hi /i;
-     
+      
+    
+        if (koszonTrigger.test(message.content)) {
 
-        if (hello.test(message.content)) {
 
-
-          uzenet.shift();
-          szia.push(uzenet.join(" "));
  
           let koszon = Math.floor(Math.random() * szia.length);
  
@@ -242,13 +259,6 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
          }
        
-     
-
-       
-
-    uzenet.shift();
-     
-   prey.push(uzenet.join(" "));
 
   let funnyNumber = Math.floor(Math.random() * prey.length);
 
