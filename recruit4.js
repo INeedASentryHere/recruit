@@ -123,8 +123,10 @@ let koszonTrigger = /szia| csá| cső |hali|szevasz|hello|üdv|szeva| hi /i;
 if (!mainTrigger.test(message.content)) {
   
   if (args[1]) {
-    
-    uzenet.shift();
+
+    if (message.content.toLowerCase().startsWith("!")) {
+           uzenet.shift();
+    }
 
     if (koszonTrigger.test(message.content)) {
 
