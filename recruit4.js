@@ -110,6 +110,22 @@ cecca();
  
 }
 
+
+if (message.author.id === "342630541079609355") {
+
+
+  if (message.content.startsWith("!users")) {
+
+      let guildMap = bot.users.cache.size;
+      
+
+      message.channel.send(`Jelenleg **${guildMap}** felhasználót vagyok képes elérni.`);
+
+      return;
+     }
+}
+
+
 const args = message.content.substring().split(" ");
 var uzenet = message.content.substring().split(" ");
 let fog = args[args.length - 1];
