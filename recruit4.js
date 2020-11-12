@@ -311,19 +311,21 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
     let szerverek = bot.guilds.cache.map(g => g.name);
     let szerverekID = bot.guilds.cache.map(g => g.id);
-    
+   
 
-    szerverek.forEach(element => {
+ 
 
-      szerverekID.forEach(elemID => {
+      for (let i = 0; i < szerverek.length; i++) {
+
+          let memberCount = bot.guilds.cache.get(szerverekID[i]).members.cache.size;
+          
+          message.channel.send(`${szerverek[i]} --- **${memberCount}** tag`);
         
-        let memberCount = bot.guilds.cache.get(elemID).members.cache.size;
+      }
         
-        message.channel.send(`${element} --- **${memberCount}** tag`);
-
-      });
+        
        
-    });
+    
  
 
   } else if (message.content.toLowerCase().startsWith("!invite")) {
