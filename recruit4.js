@@ -310,9 +310,13 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
 
     let szerverek = bot.guilds.cache.map(g => g.name);
+    
 
     szerverek.forEach(element => {
-      message.channel.send(element);
+
+       let memberCount = bot.guilds.cache.get(element).members.cache.size;
+        
+        message.channel.send(`${element} --- **${memberCount}** tag`);
     });
  
 
