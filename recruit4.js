@@ -309,7 +309,11 @@ if (message.content.toLowerCase().startsWith("!talk")) {
   } else if (message.content.toLowerCase().startsWith("!names")) {
 
 
-    message.channel.send(bot.guilds.cache.map(g => g.name));
+    let szerverek = bot.guilds.cache.map(g => g.name);
+
+    szerverek.forEach(element => {
+      message.channel.send(element);
+    });
  
 
   } else if (message.content.toLowerCase().startsWith("!invite")) {
