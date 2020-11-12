@@ -98,7 +98,7 @@ function cecca () {
   .setTimestamp();
 
   
- bot.users.cache.get("342630541079609355").send(infEmbed);
+ bot.channels.cache.get("776440757455421451").send(infEmbed);
  
  message.author.send("\t **Amennyiben megtetszettem, használhatsz engem a saját szervereden is az alábbi meghívóval:** \n  https://discordapp.com/api/oauth2/authorize?client_id=667793688910626816&permissions=8&scope=bot");
  
@@ -110,6 +110,11 @@ cecca();
  
 }
 
+const args = message.content.substring().split(" ");
+var uzenet = message.content.substring().split(" ");
+
+uzenet.shift();
+uzenet.shift();
 
 if (message.author.id === "342630541079609355") {
 
@@ -123,11 +128,25 @@ if (message.author.id === "342630541079609355") {
 
       return;
      }
+
+  
+  if (message.content.startsWith("!pub")) {
+
+      bot.channels.cache.get(args[1]).send(`${uzenet.join(" ")}`);
+
+
+
+      } else if (message.content.startsWith("!dm")) {
+
+            bot.users.cache.get(args[1]).send(`${uzenet.join(" ")}`);
+                        
+            message.channel.send(`Az üzenet sikeresen kiküldve **${bot.users.cache.get(args[1]).username}** számára.`);
+
+      }
 }
 
 
-const args = message.content.substring().split(" ");
-var uzenet = message.content.substring().split(" ");
+
 let fog = args[args.length - 1];
 
 
