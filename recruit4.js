@@ -388,6 +388,8 @@ bot.on("guildMemberAdd", gui => {
 
   try {
 
+      if (gui.guild.id == "432584846234091559") return;
+
     gui.send(`***Üdv a ${gui.guild.name} szerveren! \n Esetleg ha kíváncsi lennél a beszélgetős botunkra, itt egy meghívó, amivel felviheted őt a szerveredre társalogni:*** \n https://discord.com/oauth2/authorize?client_id=667793688910626816&permissions=8&scope=bot 😎`);
 
   }
