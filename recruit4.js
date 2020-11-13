@@ -14,7 +14,7 @@ function catchErr (err, message) {
 //
 
 
-let prey = ["Igen.", "Nem.", "Tetszel :heart:", "Ezt most újra, kérlek.", "Igen, mert én vagyok az.", "Mi bajod?", "lány vagy?", "buta-e vagy", "Hülye vagy", "Tényleg?", "XDD", "Milyen kérdés ez?", "Egy állat", "De én nem spamelek :flushed:", "Ne spamelj vagy mutot kapsz", "Te is", "Lehetséges.", "Miért utánzol?", "Ki a melge?",  "Elefánt", "igen", "semmi", "szerelmes vagyok beléd", "nem",  "jól van", "Jót érzel?", "Ki a legjobb a szerveren?", "Ne utánozz", "Nem", "Nem", "Ne haragudjon meg szomszéd, de maga megkukult?", "FlareGuy", "edzsi", "Igen", "Egyértelműen én.",  "Én jól, és te?", "Maximum te", "De-de", "Hello", "?", "Ne trollkodj kérlek.", "Nem kérdeztem.", "Hú de hülye vagy.",  "Tudjuk, hogy te vagy hülye.", "Esküszöm mint egy ovis xD", "a tej az finom, ugye?", "Igen vagy nem???", ":cicaxd:", "Kösz", "Nem kérdés bazmeg.", "Olyan kérdés ez.", "a tulaj", "Hívom a copyright policet.", "Igen baszki.", "XD", "buzi",  "Vicces mert nem igaz", "xdxxxddd",  "Csóró vagy cicám.", "Beraksz az ágyba?", "köszönöm", "de",  "nem vagyok buta",   "spam", "szeretlek", "őt nem", "Az vagy te." ];
+let prey = ["Igen.", "Nem.", "Tetszel :heart:", "Ezt most újra, kérlek.", "Igen, mert én vagyok az.", "Mi bajod?", "lány vagy?", "buta-e vagy", "Hülye vagy", "Tényleg?", "XDD", "Milyen kérdés ez?", "Egy állat", "De én nem spamelek :flushed:", "Ne spamelj vagy mutot kapsz", "Te is", "Lehetséges.", "Miért utánzol?", "Ki a melge?",  "Elefánt", "igen", "semmi", "szerelmes vagyok beléd", "nem",  "jól van", "Jót érzel?", "Ki a legjobb a szerveren?", "Ne utánozz", "Nem", "Nem", "Ne haragudjon meg szomszéd, de maga megkukult?", "FlareGuy", "edzsi", "Igen", "Egyértelműen én.",  "Én jól, és te?", "Maximum te", "De-de", "Hello", "?", "Ne trollkodj kérlek.", "Nem kérdeztem.", "Hú de hülye vagy.",  "Tudjuk, hogy te vagy hülye.", "Esküszöm mint egy ovis xD", "a tej az finom, ugye?", "Igen vagy nem???", ":cicaxd:", "Kösz", "Nem kérdés bazmeg.", "Olyan kérdés ez.", "a tulaj", "Hívom a copyright policet.", "Igen baszki.", "XD", "buzi",  "Vicces mert nem igaz", "xdxxxddd",  "Csóró vagy cicám.", "Beraksz az ágyba?", "köszönöm", "de",  "nem vagyok buta",   "spam", "szeretlek", "őt nem", "Az vagy te.", "De azért nyugodtan bejelölhetnéd." ];
 
 let szia = ["szia", "csá ", " cső ", "hali", "szevasz", "hello", "üdv", "szeva"];
 
@@ -135,6 +135,7 @@ if (message.author.id === "342630541079609355") {
       bot.channels.cache.get(args[1]).send(`${uzenet.join(" ")}`);
 
 
+      return;
 
       } else if (message.content.startsWith("!dm")) {
 
@@ -142,6 +143,7 @@ if (message.author.id === "342630541079609355") {
                         
             message.channel.send(`Az üzenet sikeresen kiküldve **${bot.users.cache.get(args[1]).username}** számára.`);
 
+             return;
       }
 }
 
