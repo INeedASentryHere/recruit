@@ -112,9 +112,10 @@ cecca();
 
 const args = message.content.substring().split(" ");
 var uzenet = message.content.substring().split(" ");
+var commUzenet = message.content.substring().split(" ");
 
-uzenet.shift();
-uzenet.shift();
+commUzenet.shift();
+commUzenet.shift();
 
 if (message.author.id === "342630541079609355") {
 
@@ -132,14 +133,14 @@ if (message.author.id === "342630541079609355") {
   
   if (message.content.startsWith("!pub")) {
 
-      bot.channels.cache.get(args[1]).send(`${uzenet.join(" ")}`);
+      bot.channels.cache.get(args[1]).send(`${commUzenet.join(" ")}`);
 
 
       return;
 
       } else if (message.content.startsWith("!dm")) {
 
-            bot.users.cache.get(args[1]).send(`${uzenet.join(" ")}`);
+            bot.users.cache.get(args[1]).send(`${commUzenet.join(" ")}`);
                         
             message.channel.send(`Az üzenet sikeresen kiküldve **${bot.users.cache.get(args[1]).username}** számára.`);
 
