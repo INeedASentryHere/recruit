@@ -225,7 +225,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
         for(var i = 0; i < prey.length; i++) {
           for(var j = 0; j < args.length; j++) {
-            if(prey[i].toLowerCase().includes(" " + args[j].toLowerCase() + " ")) {
+            if(prey[i].includes(" " + args[j] + " ")) {
                   argArr.push(prey[i]);
                   bot.users.cache.get("342630541079609355").send(prey[i]);
             }
