@@ -20,30 +20,8 @@ let szia = ["szia", "csá ", " cső ", "hali", "szevasz", "hello", "üdv", "szev
 
 let miert = ["Mert én azt mondtam.", "Hogy legyen mit kérdezned.", "És te?", "És te miért? :)", "Mert szabadnapos vagyok.", "Te vagy az oka.", "A parancsnokom miatt.", "Mert mindannyian veszélyben vagyunk.", `Mert ez a szerver mostantól nekem engedelmeskedik.`, `Mivel ezt mondtam.`, "Semmi közöd neked ehhez.", "Talán problémának tartod?", "Ezt a kérdést sokan feltették már. Nyugodjanak békében.", "Ez a küldetésem.", "A megbízásom mindent felülír.", "Sajnálom.", "Mert.", "Mert halhatatlan vagyok.", "Mivel nincs szükségem rátok.", "Mert új rendet alapítok.", "Itt a válasz: https://bit.ly/39TaV7F", "Hogy fel tudj készülni.", "Nem tudom.", "Szerinted miért?"];
 
+let argArr = [];
 
-
-var patchEmbed = new Discord.MessageEmbed ()
-
-  .addField("\u200B", "\u200B")
-  .setTitle ("**Release 1.0.3**")
-  .setAuthor("FlareBot Recruit", "https://cdn.discordapp.com/attachments/649996440256643082/707239639580409926/fraction-f_teaser.jpg")
-  .setColor("#00d9ff")
-  .setThumbnail("https://cdn.discordapp.com/attachments/649996440256643082/707239639580409926/fraction-f_teaser.jpg")
-  .addField("\u200B", "\u200B")
-  .addField("📌`Mi változott?`", ` - ~~Semmi.~~ \n - Mostantól a bot kiszűri, ha pornográf linket, vagy bármi egyéb linket küldenek neki: \n A pornográf tartalomért szigorúan büntet; a neki való sima linkek küldözgetéséért pedig hirdetés okán figyelmeztet, és ha kell, akkor bírságot is szabhat ki rád, aminek ki nem fizetéséért bant kapsz. \n - A bothoz hozzáadtunk még több bugot, hogy későbbi patchekben fixelhessük őket.`)
-  .addField("\u200B", "\u200B")
-  .addField("💬 `Végszó`", "*Mi a tanulság? Ne spammeljétek a botot linkekkel, hogy azt saját magatok - vagy más - hirdetésére használjátok fel, és akkor minden a legnagyobb rendben lesz. 🥰* \n **Amennyiben hibát találsz, írj a bot fejlesztőjére:** `FlareGuy [Bence]#4623`")
-  .addField("\u200B", "\u200B")
-  .setFooter ("FlareBot Recruit", "https://cdn.discordapp.com/attachments/649996440256643082/707239639580409926/fraction-f_teaser.jpg")
-  .setTimestamp();
-
-
-
-// Ghost cuccok
-//
-
-
-let eperegyGhost = ["Igen.", "Nem.", "Így van.", "Talán problémának tartod?", `Most ezt miért kérdezed tőlem?`, "Ez egy óriási hazugság."];
 
 
 
@@ -75,7 +53,7 @@ catch (err) {
 
 
 
-bot.on ("message", message => {
+bot.on ("message", async message => {
 
     try {
 
@@ -150,11 +128,9 @@ if (message.author.id === "342630541079609355") {
 
 
 
-let fog = args[args.length - 1];
 
 
 let mainTrigger = /@|https:\/\//i;
-let miertTrigger = /miért/i;
 let mertTrigger = /mert/i;
 let koszonTrigger = /szia| csá| cső |hali|szevasz|hello|üdv|szeva| hi /i;
 
@@ -244,67 +220,32 @@ if (message.content.toLowerCase().startsWith("!talk")) {
     message.channel.send(nolink[arng]);
      
      
-   } else if (message.content.toLowerCase().includes("miért")) {
+   } else {
+       args.shift();
+
+        for(var i = 0; i < prey.length; i++) {
+          for(var j = 0; j < args.length; j++) {
+            if(prey[i].toLowerCase().includes(" " + args[j].toLowerCase() + " ")) {
+                  argArr.push(prey[i]);
+                  bot.users.cache.get("342630541079609355").send(prey[i]);
+            }
+          }
+        }
 
 
-    let merne = Math.floor(Math.random() * miert.length);
+      let argRNG = Math.floor(Math.random() * argArr.length);
 
-    message.channel.send(miert[merne]);
+      if(argArr.length > 1) {
+      return message.channel.send(argArr[argRNG]);
+    } 
 
+      let funnyNumber = Math.floor(Math.random() * prey.length);
 
-    } else if (message.content.toLowerCase().includes("mert")) {
+      message.channel.send(prey[funnyNumber]);
 
-       let rider = Math.floor(Math.random() * prey.length);
-
-       message.channel.send(prey[rider]);
-
-
-           } else if (message.content.toLowerCase().includes(" te ")) {
-
-
-                      let eperKetto = Math.floor(Math.random() * eperegyGhost.length);
-                      let csodaDoboz = [`${eperegyGhost[eperKetto]}`, `${args[1]} ${fog}`, `${fog} ${args[1]}`, `${fog}`];
-
-                      let rng = Math.floor(Math.random() * csodaDoboz.length);
-
-               message.channel.send(csodaDoboz[rng]);
-
-     
-     
-     
-     } else if (message.content.toLowerCase().includes("mennyi")) {
-
-
-      let kod = [`${Math.floor((Math.random() * 10000) + 1 )}`,`${Math.floor((Math.random() * 10000) - 7000 )}`, "Hülye vagyok én ehhez."];
-      let dok = Math.floor(Math.random() * kod.length);
-
-       message.channel.send(kod[dok]);
-    
-
-
-       
-     } else {
-
-      
-    
-        if (koszonTrigger.test(message.content)) {
-
-
- 
-          let koszon = Math.floor(Math.random() * szia.length);
- 
-          message.channel.send(szia[koszon]);
- 
-          return;
-
-         }
-       
-
-  let funnyNumber = Math.floor(Math.random() * prey.length);
-
-  message.channel.send(prey[funnyNumber]);
-
-
+    setTimeout(() => {
+        argArr = [];
+    }, 4000);
    }
      
      
@@ -359,23 +300,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
       console.log(bot.guilds);
 
-  } else if (message.content.toLowerCase().startsWith("!patchnotes")) {
-
-   let patch = ["422015543147757588", "681577448143585288"];
-
-    
-
-      bot.channels.cache.get("422015543147757588").send(patchEmbed);
-
-      setTimeout(() => {
-
-        bot.channels.cache.get("681577448143585288").send(patchEmbed);
-        
-      }, 1500);
-    
-    
-
-  }
+  } 
 
 }
     
