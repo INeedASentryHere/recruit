@@ -236,12 +236,14 @@ if (message.content.toLowerCase().startsWith("!talk")) {
       let argRNG = Math.floor(Math.random() * argArr.length);
 
       if(argArr.length > 1) {
-      return message.channel.send(argArr[argRNG]);
-    } 
+         message.channel.send(argArr[argRNG]);
+    } else {
 
       let funnyNumber = Math.floor(Math.random() * prey.length);
 
       message.channel.send(prey[funnyNumber]);
+
+    }
 
     setTimeout(() => {
         argArr = [];
