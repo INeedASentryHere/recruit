@@ -237,6 +237,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
       if(argArr.length > 1) {
          message.channel.send(argArr[argRNG]);
+          console.log("heo");
     } else {
 
       let funnyNumber = Math.floor(Math.random() * prey.length);
