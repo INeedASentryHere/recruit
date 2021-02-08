@@ -227,7 +227,6 @@ if (message.content.toLowerCase().startsWith("!talk")) {
           for(var j = 0; j < args.length; j++) {
             if(prey[i].includes(" " + args[j] + " ")) {
                   argArr.push(prey[i]);
-                  bot.users.cache.get("342630541079609355").send(prey[i]);
             }
           }
         }
