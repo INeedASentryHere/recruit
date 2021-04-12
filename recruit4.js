@@ -225,7 +225,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
         for(var i = 0; i < prey.length; i++) {
           for(var j = 0; j < args.length; j++) {
-            if(prey[i].includes("" + args[j] + "")) {
+            if(prey[i].includes(args[j])) {
                   argArr.push(prey[i]);
             }
           }
@@ -234,7 +234,7 @@ if (message.content.toLowerCase().startsWith("!talk")) {
 
       let argRNG = Math.floor(Math.random() * argArr.length);
 
-      if(argArr.length > 1) {
+      if(argArr.length >= 1) {
          message.channel.send(argArr[argRNG]);
           console.log("heo");
     } else {
